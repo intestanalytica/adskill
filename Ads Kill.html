@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔥 ADS KILL 🔥</title>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Nosifer&family=Butcherman&family=Rye&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Butcherman', serif;
+            background: linear-gradient(135deg, #0c0c0c 0%, #1a0a0a 25%, #2d1b1b 50%, #1a0a0a 75%, #0c0c0c 100%);
+            background-size: 400% 400%;
+            animation: darkPulse 8s ease-in-out infinite;
+            min-height: 100vh;
+            color: #ff4444;
+            overflow-x: hidden;
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(120, 0, 0, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(139, 0, 0, 0.3) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        .flames {
+            position: fixed;
+            bottom: -50px;
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(180deg, transparent 0%, rgba(255, 69, 0, 0.1) 30%, rgba(255, 0, 0, 0.2) 60%, rgba(139, 0, 0, 0.3) 100%);
+            animation: flameFlicker 3s ease-in-out infinite alternate;
+            pointer-events: none;
+            z-index: -1;
+        }
+        @keyframes darkPulse {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        @keyframes flameFlicker {
+            0% { transform: scaleY(1) scaleX(1); opacity: 0.3; }
+            100% { transform: scaleY(1.2) scaleX(0.98); opacity: 0.5; }
+        }
+        .header {
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.9) 0%, rgba(75, 0, 0, 0.9) 100%);
+            backdrop-filter: blur(15px);
+            border: 2px solid #8B0000;
+            border-radius: 0 0 30px 30px;
+            box-shadow:
+                0 5px 30px rgba(139, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 0, 0, 0.2);
+            padding: 30px;
+            text-align: center;
+            margin: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 0, 0, 0.1) 50%, transparent 70%);
+            animation: scanline 4s linear infinite;
+            pointer-events: none;
+        }
+        @keyframes scanline {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        .title {
+            font-family: 'Creepster', cursive;
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            text-shadow:
+                0 0 10px #ff0000,
+                0 0 20px #ff0000,
+                0 0 30px #ff0000,
+                0 0 40px #ff0000;
+            animation: titleGlow 2s ease-in-out infinite alternate;
+            letter-spacing: 3px;
+        }
+        @keyframes titleGlow {
+            0% { text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000; }
+            100% { text-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000, 0 0 60px #ff0000; }
+        }
+        .subtitle {
+            font-family: 'Nosifer', cursive;
+            font-size: 1.5rem;
+            text-shadow: 0 0 15px #8B0000;
+        }
+        .section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #8B0000;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(139, 0, 0, 0.5);
+        }
+        h2 {
+            font-family: 'Rye', cursive;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #ff0000;
+        }
+        input[type="url"] {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            background: rgba(139, 0, 0, 0.3);
+            border: 2px solid #ff4444;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 1rem;
+            font-family: 'Orbitron', sans-serif;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        input[type="url"]:focus {
+            border-color: #ff0000;
+            box-shadow: 0 0 15px #ff0000;
+        }
+        .btn {
+            background: linear-gradient(135deg, #8B0000 0%, #4B0000 100%);
+            border: 2px solid #ff4444;
+            border-radius: 10px;
+            color: #fff;
+            font-family: 'Creepster', cursive;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin: 5px;
+            text-shadow: 0 0 5px #000;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px #ff0000;
+        }
+        .links-display {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 10px;
+            min-height: 100px;
+            max-height: 200px;
+            overflow-y: auto;
+            margin-top: 15px;
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+        }
+        .links-display p {
+            margin: 5px 0;
+        }
+        .links-display a {
+            color: #ff4444;
+            text-decoration: none;
+            word-break: break-all;
+        }
+        .control-panel {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .stat {
+            background: rgba(139, 0, 0, 0.3);
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+        }
+        .stat label {
+            display: block;
+            font-size: 0.9rem;
+        }
+        .stat span {
+            font-size: 1.5rem;
+            text-shadow: 0 0 5px #ff0000;
+        }
+        .progress-bar {
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid #8B0000;
+            border-radius: 20px;
+            height: 20px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        .progress-fill {
+            background: linear-gradient(90deg, #ff0000 0%, #8B0000 100%);
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s;
+        }
+        .current-target {
+            text-align: center;
+            word-break: break-all;
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 10px;
+        }
+        .open-btn {
+            display: block;
+            margin: 0 auto;
+        }
+        .status-indicator {
+            font-size: 1.2rem;
+            text-align: center;
+            margin: 15px 0;
+            text-shadow: 0 0 10px #ff0000;
+        }
+        .active {
+            animation: pulse 1s infinite alternate;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05); }
+        }
+        .play-pause-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="flames"></div>
+    <div class="header">
+        <h1 class="title">🔥 ADS KILL 🔥</h1>
+        <h3 class="subtitle">💀 TORRANDO O ADS DO SEU CONCORRENTE 💀</h3>
+    </div>
+    <div class="section arsenal">
+        <h2>⚡ EVIL LINK ARSENAL ⚡</h2>
+        <input type="url" id="linkInput" placeholder="Insira o link maligno...">
+        <button id="addLinkBtn" class="btn">➕ ADICIONAR</button>
+        <button id="clearLinksBtn" class="btn">🔥 LIMPAR TUDO</button>
+        <div id="linksDisplay" class="links-display">
+            💀 Nenhum link inserido ainda...<br>
+            Adicione links para começar o caos! 💀
+        </div>
+    </div>
+    <div class="section control">
+        <h2>⚔️ PAINEL DE CONTROLE SOMBRIO ⚔️</h2>
+        <button id="playPauseBtn" class="btn play-pause-btn">
+            <span id="btnIcon">▶️</span>
+            <span id="btnText">INICIAR DESTRUIÇÃO</span>
+        </button>
+        <div id="statusIndicator" class="status-indicator">
+            <span id="statusText">💤 DORMINDO</span>
+        </div>
+        <div class="control-panel">
+            <div class="stat">
+                <label>Link Atual</label>
+                <span id="currentIndex">-</span>
+            </div>
+            <div class="stat">
+                <label>Total Links</label>
+                <span id="totalLinks">0</span>
+            </div>
+            <div class="stat">
+                <label>Tempo Restante</label>
+                <span id="timeRemaining">-</span>
+            </div>
+            <div class="stat">
+                <label>Ciclos Malignos</label>
+                <span id="cycleCount">0</span>
+            </div>
+        </div>
+        <h2>🔥 PROGRESSO DA DESTRUIÇÃO 🔥</h2>
+        <div class="progress-bar">
+            <div id="progressFill" class="progress-fill"></div>
+        </div>
+        <h2>💀 ALVO ATUAL 💀</h2>
+        <div id="currentLinkDisplay" class="current-target">💀 Aguardando o início do caos... 💀</div>
+        <button id="openLinkBtn" class="btn open-btn">🔗 ABRIR PORTAL</button>
+    </div>
+    <script>
+        class DarkRotator {
+            constructor() {
+                this.links = [];
+                this.currentIndex = 0;
+                this.isPlaying = false;
+                this.timeoutId = null;
+                this.countdownInterval = null;
+                this.cycleCount = 0;
+                this.displayDuration = 10000; // 10 segundos por link
+                this.remainingTime = 0;
+                this.initializeElements();
+                this.attachEventListeners();
+                this.updateUI();
+                this.playEvilLaugh();
+            }
+
+            initializeElements() {
+                this.linkInput = document.getElementById('linkInput');
+                this.addLinkBtn = document.getElementById('addLinkBtn');
+                this.clearLinksBtn = document.getElementById('clearLinksBtn');
+                this.linksDisplay = document.getElementById('linksDisplay');
+                this.playPauseBtn = document.getElementById('playPauseBtn');
+                this.btnIcon = document.getElementById('btnIcon');
+                this.btnText = document.getElementById('btnText');
+                this.statusIndicator = document.getElementById('statusIndicator');
+                this.statusText = document.getElementById('statusText');
+                this.currentIndexEl = document.getElementById('currentIndex');
+                this.totalLinksEl = document.getElementById('totalLinks');
+                this.timeRemainingEl = document.getElementById('timeRemaining');
+                this.cycleCountEl = document.getElementById('cycleCount');
+                this.progressFill = document.getElementById('progressFill');
+                this.currentLinkDisplay = document.getElementById('currentLinkDisplay');
+                this.openLinkBtn = document.getElementById('openLinkBtn');
+            }
+
+            attachEventListeners() {
+                this.addLinkBtn.addEventListener('click', () => this.addLink());
+                this.clearLinksBtn.addEventListener('click', () => this.clearLinks());
+                this.playPauseBtn.addEventListener('click', () => this.togglePlayPause());
+                this.openLinkBtn.addEventListener('click', () => this.openCurrentLink());
+                this.linkInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        this.addLink();
+                    }
+                });
+                // Sons de interface
+                document.querySelectorAll('.btn').forEach(btn => {
+                    btn.addEventListener('mouseenter', () => this.playHoverSound());
+                    btn.addEventListener('click', () => this.playClickSound());
+                });
+            }
+
+            addLink() {
+                const link = this.linkInput.value.trim();
+                if (link) {
+                    const validLink = this.isValidUrl(link) ? link : `https://${link}`;
+                    this.links.push(validLink);
+                    this.updateLinksDisplay();
+                    this.updateUI();
+                    this.linkInput.value = '';
+                    this.playSuccessSound();
+                }
+            }
+
+            isValidUrl(string) {
+                try {
+                    new URL(string);
+                    return true;
+                } catch (_) {
+                    return false;
+                }
+            }
+
+            clearLinks() {
+                this.links = [];
+                this.updateLinksDisplay();
+                this.updateUI();
+                this.playDestroySound();
+            }
+
+            updateLinksDisplay() {
+                if (this.links.length === 0) {
+                    this.linksDisplay.innerHTML = '💀 Nenhum link inserido ainda...<br>Adicione links para começar o caos! 💀';
+                } else {
+                    this.linksDisplay.innerHTML = this.links.map((link, index) => `
+                        <p>${index + 1}. <a href="${link}" target="_blank">${link}</a></p>
+                    `).join('');
+                }
+            }
+
+            togglePlayPause() {
+                if (this.isPlaying) {
+                    this.pause();
+                } else {
+                    this.play();
+                }
+            }
+
+            play() {
+                if (this.links.length === 0) return;
+                this.isPlaying = true;
+                this.btnIcon.textContent = '⏸️';
+                this.btnText.textContent = 'PAUSAR DESTRUIÇÃO';
+                this.statusText.textContent = '💥 DESTRUINDO';
+                this.statusIndicator.classList.add('active');
+                this.processNextLink();
+                this.playDestroySound();
+            }
+
+            pause() {
+                this.isPlaying = false;
+                this.btnIcon.textContent = '▶️';
+                this.btnText.textContent = 'INICIAR DESTRUIÇÃO';
+                this.statusText.textContent = '💤 DORMINDO';
+                this.statusIndicator.classList.remove('active');
+                clearTimeout(this.timeoutId);
+                clearInterval(this.countdownInterval);
+                this.remainingTime = 0;
+                this.updateTimeRemaining();
+                this.progressFill.style.width = '0%';
+            }
+
+            processNextLink() {
+                if (!this.isPlaying) return;
+
+                if (this.currentIndex >= this.links.length) {
+                    this.currentIndex = 0;
+                    this.cycleCount++;
+                    this.updateUI();
+                }
+
+                const link = this.links[this.currentIndex];
+                window.open(link, '_blank');
+                this.currentLinkDisplay.textContent = link;
+                this.currentIndexEl.textContent = this.currentIndex + 1;
+                this.remainingTime = this.displayDuration / 1000;
+                this.updateTimeRemaining();
+
+                this.progressFill.style.transition = 'none';
+                this.progressFill.style.width = '100%';
+                setTimeout(() => {
+                    this.progressFill.style.transition = `width ${this.displayDuration}ms linear`;
+                    this.progressFill.style.width = '0%';
+                }, 50);
+
+                this.countdownInterval = setInterval(() => {
+                    this.remainingTime--;
+                    this.updateTimeRemaining();
+                    if (this.remainingTime <= 0) {
+                        clearInterval(this.countdownInterval);
+                    }
+                }, 1000);
+
+                this.timeoutId = setTimeout(() => {
+                    this.currentIndex++;
+                    this.processNextLink();
+                }, this.displayDuration);
+            }
+
+            updateTimeRemaining() {
+                this.timeRemainingEl.textContent = this.remainingTime > 0 ? `${this.remainingTime}s` : '-';
+            }
+
+            openCurrentLink() {
+                if (this.links[this.currentIndex]) {
+                    window.open(this.links[this.currentIndex], '_blank');
+                }
+            }
+
+            updateUI() {
+                this.totalLinksEl.textContent = this.links.length;
+                this.cycleCountEl.textContent = this.cycleCount;
+                this.currentIndexEl.textContent = this.links.length > 0 ? this.currentIndex + 1 : '-';
+                if (this.links.length === 0) {
+                    this.currentLinkDisplay.textContent = '💀 Aguardando o início do caos... 💀';
+                }
+            }
+
+            playEvilLaugh() {
+                this.createSound([440, 330, 440, 330], [0.1, 0.1, 0.1, 0.1], 'sawtooth');
+            }
+
+            playHoverSound() {
+                this.createSound([800], [0.05], 'sine');
+            }
+
+            playClickSound() {
+                this.createSound([600, 400], [0.1, 0.1], 'square');
+            }
+
+            playSuccessSound() {
+                this.createSound([523, 659, 784], [0.2, 0.2, 0.3], 'sine');
+            }
+
+            playDestroySound() {
+                this.createSound([200, 150, 100], [0.3, 0.3, 0.4], 'sawtooth');
+            }
+
+            createSound(frequencies, durations, waveType = 'sine') {
+                try {
+                    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                    let currentTime = audioContext.currentTime;
+                    frequencies.forEach((freq, index) => {
+                        const oscillator = audioContext.createOscillator();
+                        const gainNode = audioContext.createGain();
+                        oscillator.connect(gainNode);
+                        gainNode.connect(audioContext.destination);
+                        oscillator.type = waveType;
+                        oscillator.frequency.setValueAtTime(freq, currentTime);
+                        gainNode.gain.setValueAtTime(0.05, currentTime);
+                        gainNode.gain.exponentialRampToValueAtTime(0.001, currentTime + durations[index]);
+                        oscillator.start(currentTime);
+                        oscillator.stop(currentTime + durations[index]);
+                        currentTime += durations[index];
+                    });
+                } catch (e) {
+                    console.log('Audio not supported');
+                }
+            }
+        }
+
+        new DarkRotator();
+    </script>
+</body>
+<center>
+  <a href="https://www.instagram.com/anthonyroqs" target="_blank" 
+     style="color: white; font-family: 'Poppins', sans-serif; text-decoration: none; font-weight: bold;">
+    Desenvolvido por Anthony Roqs
+  </a>
+</center>
+</html>
